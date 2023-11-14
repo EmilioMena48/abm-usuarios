@@ -1,8 +1,9 @@
 footer{
-    margin-top: 5em;
+   /* margin-top: 5 em;*/
     background-color: #FDC95A;
     padding: 1em;
   }
+
   
   .red-social{
     display: flex;

@@ -1,7 +1,7 @@
 import {Navbar, Container, Nav} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate} from 'react-router-dom';
-import './Header.css';
+//import './Header.css';
 import useIsLoggedIn from "../../hooks/useIsLoggedIn";
 /*import { useEffect, useState } from 'react';
 import { jwtDecode } from 'jwt-decode';*/
@@ -34,21 +34,33 @@ const Header = () => {
     navigate('/');
   }
 
+
     return(
         <>
-            <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand onClick={() => navigate ('/')}>React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link onClick={() => navigate ('/')}>Home</Nav.Link>
-            <Nav.Link onClick={() => navigate('/Empleados')}>Empleados</Nav.Link>
-            {isLoggedIn && <Nav.Link onClick={onLogOut}>Log Out</Nav.Link>}
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+  <Navbar expand="lg" style={{backgroundColor:"#FDC95A"}}>
+  <Container className="d-flex justify-content-between align-items-center">
+    <div className="d-flex align-items-center">
+      <Navbar.Brand onClick={() => navigate('/')}>
+        <img src="images/Frame39529.svg" alt="" />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="me-auto">
+          <Nav.Link onClick={() => navigate('/')}>Home</Nav.Link>
+          {isLoggedIn && <Nav.Link onClick={() => navigate('/Empleados')}>Empleados</Nav.Link>}
+          
+        </Nav>
+      </Navbar.Collapse>
+    </div>
+    <div>
+      <Nav>
+        {!isLoggedIn && <Nav.Link onClick={() => navigate('/login')}>Log In</Nav.Link>}
+        {isLoggedIn && <Nav.Link onClick={onLogOut}>Log Out</Nav.Link>}
+      </Nav>
+    </div>
+  </Container>
+</Navbar>
+
         </>
     )
 }

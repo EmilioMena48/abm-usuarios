@@ -11,11 +11,11 @@ export const EmpleadoService ={
         return data;
     },
 
-   /* getProduct: async (id: number): Promise<Product> => {
-        const response = await fetch(`${BASE_URL}/products/${id}`);
+    getEmpleado: async (id: number): Promise<Empleado> => {
+        const response = await fetch(`http://localhost:8080/api/v1/empleados/${id}`);
         const data = await response.json();
         return data;
-},*/
+    },
 
     createEmpleado: async (empleado: Empleado): Promise<Empleado> => {
         const response = await fetch(`${BASE_URL}/api/admin/crearEmpleado`, {
