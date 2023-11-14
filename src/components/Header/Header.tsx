@@ -3,8 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate} from 'react-router-dom';
 //import './Header.css';
 import useIsLoggedIn from "../../hooks/useIsLoggedIn";
-/*import { useEffect, useState } from 'react';
-import { jwtDecode } from 'jwt-decode';*/
+//import { useState } from 'react';
+//import ClienteModal from "../ClienteRegister/ClienteRegister";
+/*import { jwtDecode } from 'jwt-decode';*/
 
 
 const Header = () => {
@@ -12,6 +13,7 @@ const Header = () => {
   // Utils
   const navigate = useNavigate();
   const isLoggedIn: boolean = useIsLoggedIn();
+ 
   /*const [userRole, setUserRole] = useState<string | null>(null);
 
   useEffect(() => {
@@ -56,6 +58,7 @@ const Header = () => {
       <Nav>
         {!isLoggedIn && <Nav.Link onClick={() => navigate('/login')}>Log In</Nav.Link>}
         {isLoggedIn && <Nav.Link onClick={onLogOut}>Log Out</Nav.Link>}
+       
       </Nav>
     </div>
   </Container>
