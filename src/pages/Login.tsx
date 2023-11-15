@@ -30,10 +30,10 @@ const Login: React.FC = () => {
       if (response.ok) {
         const { token } = await response.json();
 
-        // Almacena el token en localStorage
+     
         window.localStorage.setItem('jwtToken', token);
         window.localStorage.setItem('isLoggedIn', 'true');
-        // Redirige al usuario a la página principal
+        
         navigate('/');
       } else {
         console.error('Error al iniciar sesión');
@@ -45,21 +45,61 @@ const Login: React.FC = () => {
 
   // Render
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', width: '100vw' }}>
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100vh',
+      width: '100vw'
+    }}>
       <input
         type="text"
         placeholder="Usuario"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
+        style={{
+          width: '300px',
+          height: '40px',
+          borderRadius: '10px',
+          marginBottom: '10px',
+          border: '1px solid #ccc', // Añade un borde gris
+          outline: 'none',
+          paddingLeft: '10px'
+        }}
       />
       <input
         type="password"
         placeholder="Contraseña"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        style={{
+          width: '300px',
+          height: '40px',
+          borderRadius: '10px',
+          marginBottom: '10px',
+          border: '1px solid #ccc', // Añade un borde gris
+          outline: 'none',
+          paddingLeft: '10px'
+        }}
       />
-      <button onClick={onLogIn}>Log In</button>
+      <button
+        onClick={onLogIn}
+        style={{
+          width: '200px',
+          height: '40px',
+          borderRadius: '10px',
+          backgroundColor: 'blue',
+          color: 'white',
+          fontSize: '16px',
+          border: 'none',
+          outline: 'none'
+        }}
+      >
+        Log In
+      </button>
     </div>
+    
   );
 };
 

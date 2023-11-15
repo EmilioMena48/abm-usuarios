@@ -69,9 +69,9 @@ const ListaEmpleados1 = () => {
           <Table hover>
               <thead>
                   <tr>
-                      <th> Id </th>
+                      
                       <th> Usuario </th>
-                      <th> Contraseña </th>
+                     
                       <th> Nombre </th>
                       <th> Apellido </th>
                       <th> Telefono </th>
@@ -82,9 +82,8 @@ const ListaEmpleados1 = () => {
               <tbody>
                   {empleados.map( empleado => (
                       <tr key={empleado.id}>
-                          <td>{empleado.id}</td>
                           <td>{empleado.username}</td>
-                          <td>{empleado.password}</td>
+                        
                           <td>{empleado.nombre}</td>
                           <td>{empleado.apellido}</td>
                           <td>{empleado.telefono}</td>

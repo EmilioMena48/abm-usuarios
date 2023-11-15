@@ -55,10 +55,14 @@ const EmpleadoModal = ({show, onHide, title, modalType, emp, refreshData}: Emple
 
    
     const validationSchema = () => {
+
+        const passwordValidation = modalType === ModalType.CREATE ? Yup.string().required('Contraseña requerida') : Yup.string();
+
         return Yup.object().shape({
             id: Yup.number().integer().min(0),
             username: Yup.string().required(`Usuario requerido`),
-            password: Yup.string().required(`Contraseña requerida`),
+            //password: Yup.string().required(`Contraseña requerida`),
+            password: passwordValidation,
             nombre: Yup.string().required(`Nombre requerido`),
             apellido: Yup.string().required(`Apellido requerido`),
             telefono: Yup.string().required(`Telefono requerido`),
@@ -127,6 +131,7 @@ const EmpleadoModal = ({show, onHide, title, modalType, emp, refreshData}: Emple
 
                         <Form.Group controlId="formContraseña">
                             <FormLabel>Contraseña</FormLabel>
+                            {modalType === ModalType.CREATE ? (
                             <Form.Control
                                 name="password"
                                 type="text"
@@ -135,6 +140,7 @@ const EmpleadoModal = ({show, onHide, title, modalType, emp, refreshData}: Emple
                                 onBlur={formik.handleBlur}
                                 isInvalid={Boolean(formik.errors.password && formik.touched.password)}
                             />
+                            ) : null}
                             <Form.Control.Feedback type="invalid">
                                 {formik.errors.password}
                             </Form.Control.Feedback>
