@@ -17,7 +17,7 @@ function App() {
         <Header/>
         <Container style={{minHeight:'100vh', minWidth:"100%", padding:"0"}}>
           <Suspense fallback={<Loader/>}>
-            <Container style={{margin:"2em"}}>
+            <Container style={{marginTop:"2em", marginInline:"0",  minWidth:"100%"}}>
               <AppRoutes/>
             </Container>  
           </Suspense>

@@ -1,10 +1,11 @@
 import { Empleado } from "../types/Empleado";
+import { Empleado2 } from "../types/Empleado2";
 
 const BASE_URL = 'http://localhost:8080';
 
 export const EmpleadoService ={
 
-    getEmpleados: async (): Promise<Empleado[]> => {
+    getEmpleados: async (): Promise<Empleado2[]> => {
         const response = await fetch(`http://localhost:8080/api/v1/empleados/buscarEmpleados`);
         const data = await response.json();
 
@@ -29,7 +30,7 @@ export const EmpleadoService ={
         return data;
 },
     updateEmpleado: async (id: number, empleado: Empleado): Promise<Empleado> => {
-    const response = await fetch(`${BASE_URL}/api/v1/empleados/${id}`, {
+    const response = await fetch(`http://localhost:8080/api/admin/updateEmpleado/${id}`, {
         method: "PUT",
         headers: {
             'Content-Type': 'application/json'
@@ -38,7 +39,6 @@ export const EmpleadoService ={
     });
     const data = await response.json();
     return data;
-
     },
 
     deleteEmpleado: async (id: number): Promise<void> => {

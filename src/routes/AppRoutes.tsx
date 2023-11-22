@@ -4,6 +4,7 @@ import RegistrarEmpleado from "../pages/RegistrarEmpleado";
 import Empleados from "../pages/Empleados";
 import Login from "../pages/Login";
 import PrivateRoute from "../components/PrivateRoute";
+import Perfil from "../pages/Perfil";
 
 const AppRoutes: React.FC = () => {
 
@@ -13,7 +14,7 @@ const AppRoutes: React.FC = () => {
             <Route path="/Empleados" element={<PrivateRoute element={<Empleados />} />}/>
             <Route path="/RegistrarEmpleado" element={<PrivateRoute element={<RegistrarEmpleado />} />}/>
             <Route path="/login" element={<Login/>}/>
-
+            <Route path="/Perfil" element={<PrivateRoute element={<Perfil />} />}/>
         </Routes>
     )
 

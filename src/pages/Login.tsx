@@ -1,8 +1,11 @@
 //import Button from 'react-bootstrap/Button';
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { useState } from 'react';
+//import { jwtDecode } from 'jwt-decode';
+//import { JwtPayload } from 'jwt-decode';
+
+//import { jwtDecode } from 'jwt-decode';
 
 const Login: React.FC = () => {
   // Estados
@@ -11,6 +14,7 @@ const Login: React.FC = () => {
 
   // Utils
   const navigate = useNavigate();
+
 
   // Handlers
   async function onLogIn() {

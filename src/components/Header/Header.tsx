@@ -58,7 +58,6 @@ const Header = () => {
       <Nav>
         {!isLoggedIn && <Nav.Link onClick={() => navigate('/login')}>Log In</Nav.Link>}
         {isLoggedIn && <Nav.Link onClick={onLogOut}>Log Out</Nav.Link>}
-       
       </Nav>
     </div>
   </Container>
